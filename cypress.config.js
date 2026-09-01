@@ -5,6 +5,7 @@ module.exports = defineConfig({
   allowCypressEnv: false,
 
   e2e: {
+    specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx}",
     env: {
       environment: 'QA_Rahul',
       baseURL: "https://www.saucedemo.com/",
@@ -25,6 +26,11 @@ module.exports = defineConfig({
         config.env.baseURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
           config.env.username = "Admin",
           config.env.password = "admin123"
+      }
+      else if (environment === 'QA_SwagLabs') {
+        config.env.baseURL = "https://www.saucedemo.com/",
+          config.env.username = "standard_user",
+          config.env.password = "secret_sauce"
       }
       return config;
     },
