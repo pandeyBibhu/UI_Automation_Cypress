@@ -1,0 +1,22 @@
+| #  | Test scenario                         | Expected result                                      |
+|----|---------------------------------------|------------------------------------------------------|
+| 1  | Verify dropdown is visible            | Dropdown is displayed                                |
+| 2  | Verify dropdown is enabled            | User can interact with dropdown                      |
+| 3  | Verify dropdown heading               | "Dropdown Example" is displayed                      |
+| 4  | Verify default value                 | "Select" is displayed by default                     |
+| 5  | Verify option count                   | Expected number of options are displayed             |
+| 6  | Verify option text                    | All options contain expected values                  |
+| 7  | Verify option order                   | Options appear in expected order                    |
+| 8  | Verify no duplicate options            | No duplicate options are displayed                   |
+| 9  | Select first option                   | First option is selected correctly                   |
+| 10 | Select middle option                  | Middle option is selected correctly                  |
+| 11 | Select last option                    | Last option is selected correctly                    |
+| 12 | Verify selected option text           | Correct option text is displayed                     |
+| 13 | Verify selected option value          | Correct option value is selected                     |
+| 14 | Change selected option                | New option replaces previous selection               |
+| 15 | Select default option                 | "Select" becomes selected                            |
+| 16 | Select same option repeatedly         | Selection remains correct                            |
+| 17 | Keyboard navigation                   | Arrow keys move through options                      |
+| 18 | Verify disabled option                | Disabled option cannot be selected                   |
+| 19 | Verify invalid option                 | Invalid option cannot be selected                    |
+| 20 | Verify dropdown accessibility         | Dropdown is accessible as a combobox                 |

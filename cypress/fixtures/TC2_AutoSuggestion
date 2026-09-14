@@ -1,0 +1,37 @@
+| #  | Test scenario                 | Expected result                             |
+| -- | ----------------------------- | ------------------------------------------- |
+| 1  | Verify input field is visible | Input is displayed                          |
+| 2  | Verify input is enabled       | User can type                               |
+| 3  | Verify placeholder            | Correct placeholder is displayed            |
+| 4  | Click input                   | Input receives focus                        |
+| 5  | Enter valid text              | Suggestions appear                          |
+| 6  | Enter partial text            | Matching suggestions appear                 |
+| 7  | Enter exact text              | Matching suggestion appears                 |
+| 8  | Verify suggestion count       | Expected number of suggestions              |
+| 9  | Verify suggestion text        | Suggestions contain expected values         |
+| 10 | Select first suggestion       | First suggestion is selected                |
+| 11 | Select middle/last suggestion | Correct suggestion is selected              |
+| 12 | Click suggestion              | Input gets selected value                   |
+| 13 | Keyboard navigation           | Arrow keys move through suggestions         |
+| 14 | Press Enter                   | Highlighted suggestion is selected          |
+| 15 | Press Escape                  | Suggestion dropdown closes                  |
+| 16 | Clear input                   | Suggestions disappear                       |
+| 17 | Enter text with no match      | No-results behavior is correct              |
+| 18 | Enter lowercase               | Matching should work if case-insensitive    |
+| 19 | Enter uppercase               | Matching should work if case-insensitive    |
+| 20 | Enter mixed case              | Matching should work correctly              |
+| 21 | Enter spaces                  | Application handles leading/trailing spaces |
+| 22 | Enter special characters      | Application handles safely                  |
+| 23 | Enter numbers                 | Correct behavior                            |
+| 24 | Very long input               | Application remains stable                  |
+| 25 | Rapid typing                  | Suggestions update correctly                |
+| 26 | Delete characters             | Suggestions update dynamically              |
+| 27 | Change one character          | Suggestions refresh                         |
+| 28 | Click outside                 | Dropdown closes                             |
+| 29 | Reopen after selection        | New suggestions appear correctly            |
+| 30 | Verify duplicate suggestions  | No unexpected duplicates                    |
+| 31 | Verify suggestion ordering    | Correct order/ranking                       |
+| 32 | Verify partial matching       | Relevant results only                       |
+| 33 | Verify loading state          | Loading indicator if API-based              |
+| 34 | Verify API failure            | Appropriate error/no-result behavior        |
+| 35 | Verify accessibility          | Keyboard and screen-reader accessible       |
