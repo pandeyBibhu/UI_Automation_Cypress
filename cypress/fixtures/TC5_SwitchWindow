@@ -1,0 +1,18 @@
+| #  | Test scenario                             | Expected result                                                                                      |
+
+| 1  | Verify page heading is displayed          | **"Switch Window Example"** is displayed correctly                                                   |
+| 2  | Verify Open Window button is visible      | **"Open Window"** button is displayed                                                                |
+| 3  | Verify Open Window button is enabled      | Button is enabled and can be interacted with                                                         |
+| 4  | Verify button text                        | Button text is exactly **"Open Window"**                                                             |
+| 5  | Click Open Window button                  | A new browser tab/window is opened                                                                   |
+| 6  | Verify new window/tab URL                 | New window/tab navigates to the expected URL                                                         |
+| 7  | Verify new window/tab title               | New window/tab has the expected page title                                                           |
+| 8  | Verify new window/tab content             | Expected content/page elements are displayed in the new window/tab                                   |
+| 9  | Verify original window remains available  | Original page/window remains open and accessible                                                     |
+| 10 | Switch from original window to new window | Test can successfully interact with the newly opened window/tab                                      |
+| 11 | Verify interaction in new window          | User/test can interact with the required element(s) in the new window                                |
+| 12 | Close new window/tab and return           | New window/tab closes and focus/context returns to original window                                   |
+| 13 | Verify original page after returning      | Original **"Switch Window Example"** page is still displayed correctly                               |
+| 14 | Click Open Window multiple times          | Behavior matches the requirement—additional windows/tabs are either opened or prevented as specified |
+| 15 | Verify keyboard accessibility             | Button can receive focus and be activated using the keyboard                                         |
+| 16 | Verify button focus indication            | A visible focus indicator is shown when the button receives keyboard focus                           |

@@ -1,0 +1,42 @@
+| #  | Test scenario                      | Expected result                                     |
+| -- | ---------------------------------- | --------------------------------------------------- |
+| 1  | Verify checkbox heading            | "Checkbox Example" is displayed                     |
+| 2  | Verify Option1 checkbox is visible | Option1 checkbox is displayed                       |
+| 3  | Verify Option2 checkbox is visible | Option2 checkbox is displayed                       |
+| 4  | Verify Option3 checkbox is visible | Option3 checkbox is displayed                       |
+| 5  | Verify Option1 checkbox is enabled | User can interact with Option1 checkbox             |
+| 6  | Verify Option2 checkbox is enabled | User can interact with Option2 checkbox             |
+| 7  | Verify Option3 checkbox is enabled | User can interact with Option3 checkbox             |
+| 8  | Verify default state               | All checkboxes are unchecked by default             |
+| 9  | Select Option1                     | Option1 is checked correctly                        |
+| 10 | Select Option2                     | Option2 is checked correctly                        |
+| 11 | Select Option3                     | Option3 is checked correctly                        |
+| 12 | Deselect Option1                   | Option1 becomes unchecked                           |
+| 13 | Deselect Option2                   | Option2 becomes unchecked                           |
+| 14 | Deselect Option3                   | Option3 becomes unchecked                           |
+| 15 | Select multiple checkboxes         | Multiple checkboxes can be selected simultaneously  |
+| 16 | Select all checkboxes              | Option1, Option2 and Option3 are all checked        |
+| 17 | Deselect all checkboxes            | Option1, Option2 and Option3 are all unchecked      |
+| 18 | Select only Option1                | Only Option1 is checked                             |
+| 19 | Select only Option2                | Only Option2 is checked                             |
+| 20 | Select only Option3                | Only Option3 is checked                             |
+| 21 | Select Option1 and Option2         | Option1 and Option2 are checked; Option3 unchecked  |
+| 22 | Select Option1 and Option3         | Option1 and Option3 are checked; Option2 unchecked  |
+| 23 | Select Option2 and Option3         | Option2 and Option3 are checked; Option1 unchecked  |
+| 24 | Click selected checkbox again      | Selected checkbox becomes unchecked                 |
+| 25 | Verify checkbox independence       | Selecting one checkbox does not affect others       |
+| 26 | Verify checkbox label text         | "Option1", "Option2", and "Option3" are displayed   |
+| 27 | Click Option1 label                | Option1 becomes checked if label is clickable       |
+| 28 | Click Option2 label                | Option2 becomes checked if label is clickable       |
+| 29 | Click Option3 label                | Option3 becomes checked if label is clickable       |
+| 30 | Verify keyboard navigation         | Checkbox can receive focus using keyboard           |
+| 31 | Verify keyboard selection          | Pressing Space selects the focused checkbox         |
+| 32 | Verify keyboard deselection        | Pressing Space again deselects the checkbox         |
+| 33 | Verify tab order                   | Focus moves through checkboxes in expected order    |
+| 34 | Verify focus indication            | Focused checkbox has a visible focus indicator      |
+| 35 | Verify checkbox accessibility      | Each checkbox has an appropriate accessible name    |
+| 36 | Verify checkbox state              | Checked checkbox has `checked=true` state           |
+| 37 | Verify unchecked state             | Unchecked checkbox has `checked=false` state        |
+| 38 | Verify page refresh behavior       | Checkbox state behaves according to requirements    |
+| 39 | Verify clicking outside checkbox   | Checkbox state does not change unexpectedly         |
+| 40 | Verify all possible combinations   | All 8 possible checkbox combinations work correctly |
