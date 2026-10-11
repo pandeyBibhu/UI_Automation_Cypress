@@ -1,246 +1,186 @@
 /// <reference types="cypress" />
+import CheckBoxActions from '../../PageActions/CheckBoxActions.js';
+
+const checkboxActions = new CheckBoxActions();
+
 describe('Checkbox Tests', () => {
     beforeEach(() => {
         cy.visit('/');
     })
 
-    it.skip('Verify checkbox header', () => {
+    it('Verify checkbox header', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('fieldset:has(#checkBoxOption1) > legend').invoke('text').then((text) => {
-            cy.log(text);
-            expect(text.trim()).to.equal('Checkbox Example');
-        })
+        checkboxActions.validateTitle();
     })
-    it.skip('Verify Option1 checkbox is visible', () => {
+    it('Verify Option1 checkbox is visible', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').should('be.visible');
+        checkboxActions.validateVisible(1);
 
     })
-    it.skip('Verify Option2 checkbox is visible', () => {
+    it('Verify Option2 checkbox is visible', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption2').should('be.visible');
+        checkboxActions.validateVisible(2);
 
     })
-    it.skip('Verify Option3 checkbox is visible', () => {
+    it('Verify Option3 checkbox is visible', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption3').should('be.visible');
+        checkboxActions.validateVisible(3);
 
     })
-    it.skip('Verify Option1 checkbox is enabled', () => {
+    it('Verify Option1 checkbox is enabled', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').should('be.enabled');
+        checkboxActions.validateEnabled(1);
     })
-    it.skip('Verify Option2 checkbox is enabled', () => {
+    it('Verify Option2 checkbox is enabled', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption2').should('be.enabled');
+        checkboxActions.validateEnabled(2);
     })
-    it.skip('Verify Option3 checkbox is enabled', () => {
+    it('Verify Option3 checkbox is enabled', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption3').should('be.enabled');
+        checkboxActions.validateEnabled(3);
     })
-    it.skip('Verify default state of checkboxes', () => {
+    it('Verify default state of checkboxes', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').should('not.be.checked');
-        cy.get('#checkBoxOption2').should('not.be.checked');
-        cy.get('#checkBoxOption3').should('not.be.checked');
+        checkboxActions.validateSelectedState();
     })
-    it.skip('Select Option1 ', () => {
+    it('Select Option1 ', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check().should('be.checked');
+        checkboxActions.select(1);
     })
-    it.skip('Select Option2 ', () => {
+    it('Select Option2 ', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption2').check().should('be.checked');
+        checkboxActions.select(2);
     })
-    it.skip('Select Option3 ', () => {
+    it('Select Option3 ', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption3').check().should('be.checked');
+        checkboxActions.select(3);
     })
-    it.skip('Deselect Option1 ', () => {
+    it('Deselect Option1 ', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check().should('be.checked');
-        cy.get('#checkBoxOption1').uncheck().should('not.be.checked');
+        checkboxActions.select(1);
+        checkboxActions.deselect(1);
     })
-    it.skip('Deselect Option2 ', () => {
+    it('Deselect Option2 ', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption2').check().should('be.checked');
-        cy.get('#checkBoxOption2').uncheck().should('not.be.checked');
+        checkboxActions.select(2);
+        checkboxActions.deselect(2);
     })
-    it.skip('Deselect Option3 ', () => {
+    it('Deselect Option3 ', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption3').check().should('be.checked');
-        cy.get('#checkBoxOption3').uncheck().should('not.be.checked');
+        checkboxActions.select(3);
+        checkboxActions.deselect(3);
     })
-    it.skip('Verify toggle functionality of checkboxes', () => {
+    it('Verify toggle functionality of checkboxes', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check().should('be.checked');
-        cy.get('#checkBoxOption1').uncheck().should('not.be.checked');
-        cy.get('#checkBoxOption2').check().should('be.checked');
-        cy.get('#checkBoxOption2').uncheck().should('not.be.checked');
-        cy.get('#checkBoxOption3').check().should('be.checked');
-        cy.get('#checkBoxOption3').uncheck().should('not.be.checked');
+        checkboxActions.toggle(1);
+        checkboxActions.toggle(2);
+        checkboxActions.toggle(3);
     })
-    it.skip('check if checkboxes selected then deselect or if not selected then select', () => {
+    it('check if checkboxes selected then deselect or if not selected then select', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').then(($checkbox1) => {
-            if ($checkbox1.is(':checked')) {
-                cy.wrap($checkbox1).uncheck().should('not.be.checked');
-            } else {
-                cy.wrap($checkbox1).check().should('be.checked');
-            }
-        });
+        checkboxActions.toggleBasedOnCurrentState(1);
     });
 
     it('Select Option1 and Option2', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check();
-        cy.get('#checkBoxOption2').check();
-        cy.get('#checkBoxOption1').should('be.checked');
-        cy.get('#checkBoxOption2').should('be.checked');
-        cy.get('#checkBoxOption3').should('not.be.checked');
+        checkboxActions.selectMultiple([1, 2]);
+        checkboxActions.validateSelectedState([1, 2]);
     })
 
     it('Select Option1 and Option3', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check();
-        cy.get('#checkBoxOption3').check();
-        cy.get('#checkBoxOption1').should('be.checked');
-        cy.get('#checkBoxOption3').should('be.checked');
-        cy.get('#checkBoxOption2').should('not.be.checked');
+        checkboxActions.selectMultiple([1, 3]);
+        checkboxActions.validateSelectedState([1, 3]);
     })
 
     it('Select Option2 and Option3', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption2').check();
-        cy.get('#checkBoxOption3').check();
-        cy.get('#checkBoxOption2').should('be.checked');
-        cy.get('#checkBoxOption3').should('be.checked');
-        cy.get('#checkBoxOption1').should('not.be.checked');
+        checkboxActions.selectMultiple([2, 3]);
+        checkboxActions.validateSelectedState([2, 3]);
     })
 
     it('Click selected checkbox again', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check().click().should('not.be.checked');
+        checkboxActions.clickSelectedToDeselect(1);
     })
 
     it('Verify checkbox independence', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check();
-        cy.get('#checkBoxOption1').should('be.checked');
-        cy.get('#checkBoxOption2').should('not.be.checked');
-        cy.get('#checkBoxOption3').should('not.be.checked');
-        cy.get('#checkBoxOption2').check();
-        cy.get('#checkBoxOption1').should('be.checked');
-        cy.get('#checkBoxOption2').should('be.checked');
-        cy.get('#checkBoxOption3').should('not.be.checked');
+        checkboxActions.validateIndependentSelection();
     })
 
     it('Verify checkbox label text', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('fieldset:has(#checkBoxOption1) label').should('have.length', 3);
-        cy.get('fieldset:has(#checkBoxOption1) label').then(($labels) => {
-            const labels = [...$labels].map((label) => label.textContent.trim());
-            expect(labels).to.include.members(['Option1', 'Option2', 'Option3']);
-        });
+        checkboxActions.validateLabels();
     })
 
     it('Click Option1 label', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('label:has(#checkBoxOption1)').click();
-        cy.get('#checkBoxOption1').should('be.checked');
+        checkboxActions.clickLabel(1);
     })
 
     it('Click Option2 label', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('label:has(#checkBoxOption2)').click();
-        cy.get('#checkBoxOption2').should('be.checked');
+        checkboxActions.clickLabel(2);
     })
 
     it('Click Option3 label', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('label:has(#checkBoxOption3)').click();
-        cy.get('#checkBoxOption3').should('be.checked');
+        checkboxActions.clickLabel(3);
     })
 
     it('Verify keyboard navigation', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').focus().should('have.focus');
-        cy.get('#checkBoxOption2').focus().should('have.focus');
-        cy.get('#checkBoxOption3').focus().should('have.focus');
+        checkboxActions.validateTabOrder();
     })
 
     it('Verify keyboard selection', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').focus().type(' ').should('be.checked');
+        checkboxActions.selectWithKeyboard(1);
     })
 
     it('Verify keyboard deselection', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check().focus().type(' ').should('not.be.checked');
+        checkboxActions.deselectWithKeyboard(1);
     })
 
     it('Verify tab order', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').focus().should('have.focus');
-        cy.get('#checkBoxOption2').focus().should('have.focus');
-        cy.get('#checkBoxOption3').focus().should('have.focus');
+        checkboxActions.validateTabOrder();
     })
 
     it('Verify focus indication', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').focus().should('have.focus');
+        checkboxActions.validateFocus(1);
     })
 
     it('Verify checkbox accessibility', () => {
         cy.visit('/AutomationPractice/');
-        cy.findByRole('checkbox', { name: 'Option1' }).should('exist');
-        cy.findByRole('checkbox', { name: 'Option2' }).should('exist');
-        cy.findByRole('checkbox', { name: 'Option3' }).should('exist');
+        checkboxActions.validateAccessibility();
     })
 
     it('Verify checkbox state', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check().should('have.prop', 'checked', true);
+        checkboxActions.validateCheckedProperty(1, true);
     })
 
     it('Verify unchecked state', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').should('have.prop', 'checked', false);
+        checkboxActions.validateCheckedProperty(1, false);
     })
 
     it('Verify page refresh behavior', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check();
-        cy.reload();
-        cy.get('#checkBoxOption1').should('not.be.checked');
+        checkboxActions.validateRefreshResets(1);
     })
 
     it('Verify clicking outside checkbox', () => {
         cy.visit('/AutomationPractice/');
-        cy.get('#checkBoxOption1').check();
-        cy.get('body').click(0, 0);
-        cy.get('#checkBoxOption1').should('be.checked');
+        checkboxActions.validateClickOutsideKeepsState(1);
     })
 
     it('Verify all possible combinations', () => {
-        const combinations = [
-            [],
-            ['#checkBoxOption1'],
-            ['#checkBoxOption2'],
-            ['#checkBoxOption3'],
-            ['#checkBoxOption1', '#checkBoxOption2'],
-            ['#checkBoxOption1', '#checkBoxOption3'],
-            ['#checkBoxOption2', '#checkBoxOption3'],
-            ['#checkBoxOption1', '#checkBoxOption2', '#checkBoxOption3']
-        ];
-
-        combinations.forEach((combination) => {
-            cy.visit('/AutomationPractice/');
-            combination.forEach((checkbox) => cy.get(checkbox).check());
-            cy.get('#checkBoxOption1').should(combination.includes('#checkBoxOption1') ? 'be.checked' : 'not.be.checked');
-            cy.get('#checkBoxOption2').should(combination.includes('#checkBoxOption2') ? 'be.checked' : 'not.be.checked');
-            cy.get('#checkBoxOption3').should(combination.includes('#checkBoxOption3') ? 'be.checked' : 'not.be.checked');
-        });
+        checkboxActions.validateAllCombinations();
     })
 
 }) 

@@ -1,0 +1,12 @@
+| #  | Test scenario                                              | Expected result                                                     |
+|----|-----------------------------------------------------------|--------------------------------------------------------------------|
+| 1  | Verify all column headers are displayed                   | Name, Position, City, and Amount headers are displayed.            |
+| 2  | Verify table data is displayed correctly                  | Data is shown under the correct column headings.                  |
+| 3  | Verify the table body is scrollable                       | The user can scroll vertically through the table records.         |
+| 4  | Verify the table header remains fixed while scrolling     | The header stays visible while the body scrolls.                   |
+| 5  | Verify the first record                                   | The first row displays the correct Name, Position, City, and Amount values. |
+| 6  | Verify records after scrolling                            | Additional records are displayed correctly without overlapping.    |
+| 7  | Verify the last record can be accessed                    | The user can scroll to and view the last record.                  |
+| 8  | Verify header and data column alignment during scrolling | Each header stays aligned with its corresponding column.          |
+| 9  | Verify scrollbar functionality                            | The scrollbar allows movement from top to bottom and vice versa.   |
+| 10 | Verify table does not display overlapping or truncated data | All visible data remains readable, aligned, and properly formatted. |

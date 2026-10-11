@@ -1,0 +1,19 @@
+| #  | Test scenario                        | Expected result                                      |
+|----|--------------------------------------|------------------------------------------------------|
+| 1  | Verify page heading                  | "Switch To Alert Example" is displayed               |
+| 2  | Verify input field is visible        | Input field is displayed                             |
+| 3  | Verify input field is enabled        | User can type in the input field                     |
+| 4  | Verify input placeholder             | "Enter Your Name" is displayed                       |
+| 5  | Enter valid name                     | Name is entered successfully                         |
+| 6  | Click Alert button                   | Browser alert is displayed                           |
+| 7  | Verify Alert message                 | Alert displays the expected message with name        |
+| 8  | Accept Alert                         | Alert closes successfully                            |
+| 9  | Click Confirm button                 | Confirmation dialog is displayed                     |
+| 10 | Verify Confirm message               | Dialog displays the expected message with name       |
+| 11 | Accept Confirm dialog                | Dialog closes and expected behavior occurs           |
+| 12 | Dismiss Confirm dialog               | Dialog closes and expected alternate behavior occurs |
+| 13 | Click Alert without entering name    | Expected alert behavior occurs                       |
+| 14 | Click Confirm without entering name  | Expected confirm behavior occurs                     |
+| 15 | Replace entered name                 | Previous value is replaced with the new name         |
+| 16 | Enter special characters             | Application handles special characters correctly     |
+| 17 | Enter long text                      | Application handles long input as expected           |
